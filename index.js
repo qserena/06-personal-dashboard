@@ -55,7 +55,7 @@ function getWeather() {
 					console.log(data)
 					const iconUrl = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`
 					document.getElementById('weather').innerHTML = `
-						<img src="${iconUrl}" />
+						<img class="icon" src="${iconUrl}" />
 						<p>${Math.round(data.main.temp)}º</p>
 						<p>${Math.round(data.name)}</p>
 					`
