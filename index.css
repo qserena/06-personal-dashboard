@@ -27,12 +27,14 @@ div.top {
 	justify-content: space-between;
 }
 
-div.crypto {
+div.crypto,
+div.weather {
 	font-size: 1.3rem;
 }
 
-div.crypto > p {
-	margin: 2px;
+div.crypto > p,
+div.weather > p {
+	margin: 4px;
 }
 
 .crypto-top {
@@ -45,6 +47,11 @@ div.crypto > p {
 .crypto-top img {
 	width: 40px;
 	height: 40px;
+}
+
+.icon {
+	width: 50px;
+	height: 50px;
 }
 
 h1.time {
