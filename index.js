@@ -11,21 +11,27 @@ try {
 	document.getElementById('author').textContent = `By: Dodi Achmad`
 }
 
-const response = await fetch('https://api.coingecko.com/api/v3/coins/bitcoin')
-if (!response.ok) {
-	throw Error('Something went wrong')
-}
-const dat = await response.json()
+try {
+	const response = await fetch(
+		'https://api.coingecko.com/api/v3/coins/bitcoin'
+	)
+	if (!response.ok) {
+		throw Error('Something went wrong')
+	}
+	const dat = await response.json()
 
-document.getElementById('crypto-top').innerHTML = `
+	document.getElementById('crypto-top').innerHTML = `
 		<img src="${dat.image.small}" alt="Image of Bitcoin currency" />
 		<p>${dat.name}</p>
 	`
-document.getElementById('crypto').innerHTML += `
+	document.getElementById('crypto').innerHTML += `
 		<p>🎯: ${dat.market_data.current_price.sek} SEK</p>
 		<p>👆: ${dat.market_data.high_24h.sek} SEK</p>
 		<p>👇: ${dat.market_data.low_24h.sek} SEK</p>
     `
+} catch (err) {
+	console.log(err)
+}
 
 function getCurrentTime() {
 	const date = new Date()
